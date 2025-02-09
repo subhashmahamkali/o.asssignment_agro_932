@@ -1,0 +1,93 @@
+---
+title: "1.assignment"
+author: "Subhash.M"
+date: "2025-02-09"
+output: html_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_knit$set(root.dir=normalizePath('/work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_932')) 
+```
+
+
+```{r, include=FALSE}
+#always follow dir system
+ install.packages('ProjectTemplate')
+ library('ProjectTemplate')
+ create.project('letters')
+```
+
+data downoad for the 10 wildtype samples
+
+```{bash, eval = F}
+cd /work/jyanglab/subhash/0.assignment_agro_932/1.wild_sorghum/
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023308/CRR023308_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023308/CRR023308_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023319/CRR023319_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023319/CRR023319_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023320/CRR023320_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023320/CRR023320_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023321/CRR023321_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023321/CRR023321_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023322/CRR023322_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023322/CRR023322_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023325/CRR023325_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023325/CRR023325_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023326/CRR023326_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023326/CRR023326_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023327/CRR023327_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023327/CRR023327_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023396/CRR023396_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023396/CRR023396_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023397/CRR023397_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023397/CRR023397_r2.fq.gz
+
+```
+
+data sownload for the 10 improved samples
+
+```{bash,  include=FALSE}
+cd /work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023272/CRR023272_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023272/CRR023272_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023293/CRR023293_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023293/CRR023293_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023294/CRR023294_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023294/CRR023294_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023233/CRR023233_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023233/CRR023233_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023260/CRR023260_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023260/CRR023260_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023271/CRR023271_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023271/CRR023271_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023289/CRR023289_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023289/CRR023289_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023274/CRR023274_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023274/CRR023274_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023280/CRR023280_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023280/CRR023280_r2.fq.gz
+
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023281/CRR023281_f1.fq.gz
+wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023281/CRR023281_r2.fq.gz
+```
+
