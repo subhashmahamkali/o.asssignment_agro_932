@@ -383,56 +383,64 @@ display: none;
 <h1>Assignment-1</h1>
 <div id="data-download-and-methods-described-for-the-selection-scan" class="section level2">
 <h2>data download and methods described for the selection scan</h2>
-<p>Sorghum is the 5th most cultivated cereal with a genome size of
-<strong>720 Mb</strong><br />
-The plant species I am working and used for this assignment is sorghum
-<em>sorghum bicolar</em> I am using the data published on the sorgsd
-database from the publication <span class="citation">(Zhang et al.
-2018)</span> <span class="citation">(Liu et al. 2021)</span></p>
+<p>The plant species I am working and used for this assignment is
+sorghum <em>sorghum bicolar</em> I am using the data published on the
+sorgsd database from the publication <span class="citation">(Zhang et
+al. 2018)</span> <span class="citation">(Liu et al. 2021)</span>.Sorghum
+is the 5th most cultivated cereal with a genome size of <strong>720
+Mb</strong><br />
+</p>
 <p>I have downloaded 10 samples of wild population <em>(n = 10)</em> and
-10 samples of improved sorghum data <em>(n = 10)</em>. from the
-mentioned paper. I have used the following code to download the data
-from genome sequence archive under accession number
-<strong>CRA00061</strong>.</p>
+10 samples of improved sorghum data <em>(n = 10)</em>. from the <span class="citation">(Zhang et al. 2018)</span> paper. I have used the
+following code to download the data from genome sequence archive under
+accession number <strong>CRA00061</strong>.</p>
 <p>In this study they have used 241 sorghum accessions (42 are wild
 sorghum) for studying the dry gene which is responsible for encoding NAC
 transcription factor and controls pitchy/juicy stem trait. mutation in
 these dry gene lead to the origin of sweet sorghum.</p>
 <div id="paths-for-the-data" class="section level3">
 <h3>paths for the data</h3>
-<p>wildtype data =
-“/work/jyanglab/subhash/0.assignment_agro_932/1.wild_sorghum/” Improved
-data =
-“/work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/”
-Rference genome (version5) =
-“/work/jyanglab/subhash/0.assignment_agro_932/0..refrence/Phytozome/PhytozomeV13/”</p>
+<p><strong>wildtype data</strong> =
+“/work/jyanglab/subhash/0.assignment_agro_932/1.wild_sorghum/”<br />
+</p>
+<p><strong>Improved data</strong> =
+“/work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/”  </p>
+<p><strong>Rference genome</strong> (version5) =
+“/work/jyanglab/subhash/0.assignment_agro_932/0..refrence/Phytozome/PhytozomeV13/”<br />
+</p>
 <pre class="r"><code>#I have set the path to this directory, this makes someone to run the code very easily
 knitr::opts_chunk$set(echo = TRUE) 
 knitr::opts_knit$set(root.dir=normalizePath(&#39;/work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_932&#39;)) </code></pre>
 <p>all the 241 sorghum lines sequences using Illumina HiSeq X ten
 platform and used paired end sequencing. The average sequecning depth of
-all teh sorghum accesions used were ~ 5-6.7 X. They called the SNPs
+all the sorghum accessions used were ~ 5-6.7 X. They called the SNPs
 using GATK (Genome Analysis ToolKit) after aligned with the reference
-genome of BTx623 (v3.1) with BWA -mem. They identified ~32 million SNPs
-and 4.2 million InDels from the 241 lines of sorghum.</p>
-<div id="selection-scan-method-used-in-the-publication" class="section level4">
-<h4>selection scan method used in the publication</h4>
+genome of BTx623 (v3.1) with BWA -mem algorithm. They identified ~32
+million SNPs and 4.2 million InDels from the 241 lines of sorghum.</p>
+</div>
+</div>
+</div>
+<div id="selection-scan-method-used-in-the-publication" class="section level1">
+<h1>selection scan method used in the publication</h1>
 <p>For the selection scan they have used XPCLR software to calculate the
 XP-CLR score between the sub-groups with non-overlapping window size of
 10 Kb. They also filtered the SNPs with the missing rate of 0.5 and
 minimum depth of 2 and minimum genotype quality 5, the average genetic
 distance for each chromosome was estimated from previous studies.</p>
-<p>They also calculated the nucleotide diversity (pi,π) and Tajima’s D
-using VCFtools SNPs used to calculate Tajima’s D in the wild and pithy
-population was 37 and 30 respectively. for all these analysis the S.
-propinquum is used as the ancestor.</p>
+<p>They also conducted additional population genetic studies the
+nucleotide diversity (pi,π) and Tajima’s D using VCFtools SNPs used to
+calculate Tajima’s D in the wild and pithy population was 37 and 30
+respectively. for all these analysis the S. propinquum is used as the
+ancestor.</p>
 <pre class="r"><code>#firstly, I have followed the data dir system to organize my data and code fro higher producbility.
 #always follow dir system
 
  install.packages(&#39;ProjectTemplate&#39;)
  library(&#39;ProjectTemplate&#39;)
  create.project(&#39;letters&#39;)</code></pre>
-<p>data downoad for the 10 wildtype samples</p>
+</div>
+<div id="data-downoad-for-the-10-wildtype-samples" class="section level1">
+<h1>data downoad for the 10 wildtype samples</h1>
 <pre class="bash"><code>
 #I have downloaded n=10 wild sorghum genotype data
 
@@ -468,7 +476,9 @@ wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023396/CRR023396_r2.fq.gz
 wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023397/CRR023397_f1.fq.gz
 wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023397/CRR023397_r2.fq.gz
 </code></pre>
-<p>data sownload for the 10 improved samples</p>
+</div>
+<div id="data-sownload-for-the-10-improved-samples" class="section level1">
+<h1>data sownload for the 10 improved samples</h1>
 <pre class="bash"><code>cd /work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/
 
 wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023272/CRR023272_f1.fq.gz
@@ -500,9 +510,6 @@ wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023280/CRR023280_r2.fq.gz
 
 wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023281/CRR023281_f1.fq.gz
 wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023281/CRR023281_r2.fq.gz</code></pre>
-</div>
-</div>
-</div>
 </div>
 <div id="refrences" class="section level1 unnumbered">
 <h1 class="unnumbered">Refrences</h1>

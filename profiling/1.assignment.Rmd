@@ -10,18 +10,22 @@ bibliography: /work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_93
 
 ## data download and methods described for the selection scan
 
-Sorghum is the 5th most cultivated cereal with a genome size of **720 Mb**\
+
 The plant species I am working and used for this assignment is sorghum *sorghum bicolar* I am using the data published on the sorgsd database from the publication
-[@zhang2018sweet] [@liu2021sorgsd]
+[@zhang2018sweet] [@liu2021sorgsd].Sorghum is the 5th most cultivated cereal with a genome size of **720 Mb**\
 
 
-I have downloaded 10 samples of wild population *(n = 10)* and 10 samples of improved sorghum data *(n = 10)*. from the mentioned paper. I have used the following code to download the data from genome sequence archive under accession number **CRA00061**.
+I have downloaded 10 samples of wild population *(n = 10)* and 10 samples of improved sorghum data *(n = 10)*. from the [@zhang2018sweet] paper. I have used the following code to download the data from genome sequence archive under accession number **CRA00061**.
 
 In this study they have used 241 sorghum accessions (42 are wild sorghum) for studying the dry gene which is responsible for encoding NAC transcription factor and controls pitchy/juicy stem trait. mutation in these dry gene lead to the origin of sweet sorghum.
 
 ### paths for the data
 
-wildtype data = "/work/jyanglab/subhash/0.assignment_agro_932/1.wild_sorghum/" Improved data = "/work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/" Rference genome (version5) = "/work/jyanglab/subhash/0.assignment_agro_932/0..refrence/Phytozome/PhytozomeV13/"
+**wildtype data** = "/work/jyanglab/subhash/0.assignment_agro_932/1.wild_sorghum/" \
+
+**Improved data** = "/work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/" \ 
+
+**Rference genome** (version5) = "/work/jyanglab/subhash/0.assignment_agro_932/0..refrence/Phytozome/PhytozomeV13/" \
 
 ```{r setup}
 #I have set the path to this directory, this makes someone to run the code very easily
@@ -29,13 +33,13 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir=normalizePath('/work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_932')) 
 ```
 
-all the 241 sorghum lines sequences using Illumina HiSeq X ten platform and used paired end sequencing. The average sequecning depth of all teh sorghum accesions used were \~ 5-6.7 X. They called the SNPs using GATK (Genome Analysis ToolKit) after aligned with the reference genome of BTx623 (v3.1) with BWA -mem. They identified \~32 million SNPs and 4.2 million InDels from the 241 lines of sorghum.
+all the 241 sorghum lines sequences using Illumina HiSeq X ten platform and used paired end sequencing. The average sequecning depth of all the sorghum accessions used were \~ 5-6.7 X. They called the SNPs using GATK (Genome Analysis ToolKit) after aligned with the reference genome of BTx623 (v3.1) with BWA -mem algorithm. They identified \~32 million SNPs and 4.2 million InDels from the 241 lines of sorghum.
 
-#### selection scan method used in the publication
+# selection scan method used in the publication
 
 For the selection scan they have used XPCLR software to calculate the XP-CLR score between the sub-groups with non-overlapping window size of 10 Kb. They also filtered the SNPs with the missing rate of 0.5 and minimum depth of 2 and minimum genotype quality 5, the average genetic distance for each chromosome was estimated from previous studies.
 
-They also calculated the nucleotide diversity (pi,π) and Tajima's D using VCFtools SNPs used to calculate Tajima's D in the wild and pithy population was 37 and 30 respectively. for all these analysis the S. propinquum is used as the ancestor.
+They also conducted additional population genetic studies the nucleotide diversity (pi,π) and Tajima's D using VCFtools SNPs used to calculate Tajima's D in the wild and pithy population was 37 and 30 respectively. for all these analysis the S. propinquum is used as the ancestor.
 
 ```{r,  eval=FALSE}
 #firstly, I have followed the data dir system to organize my data and code fro higher producbility.
@@ -46,7 +50,7 @@ They also calculated the nucleotide diversity (pi,π) and Tajima's D using VCFto
  create.project('letters')
 ```
 
-data downoad for the 10 wildtype samples
+# data downoad for the 10 wildtype samples
 
 ```{bash, eval=FALSE}
 
@@ -86,7 +90,7 @@ wget ftp://download.big.ac.cn/gsa3/CRA000611/CRR023397/CRR023397_r2.fq.gz
 
 ```
 
-data sownload for the 10 improved samples
+# data sownload for the 10 improved samples
 
 ```{bash, eval=FALSE}
 cd /work/jyanglab/subhash/0.assignment_agro_932/2.improved_sorghum/
