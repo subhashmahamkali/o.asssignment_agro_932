@@ -2,7 +2,7 @@
 title: "1.assignment"
 author: "Subhash.M"
 date: "2025-02-09"
-output: html_document
+output:
 bibliography: /work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_932/profiling/ref.bib
 ---
 
