@@ -32,7 +32,7 @@ In this study they have used 241 sorghum accessions (42 are wild sorghum) for st
 knitr::opts_chunk$set(echo = TRUE) 
 knitr::opts_knit$set(root.dir=normalizePath('/work/jyanglab/subhash/0.assignment_agro_932/o.asssignment_agro_932')) 
 ```
-
+[@zhang2018sweet]have conducted whole genome resequencing generated a total of 7.39 GB paired end reads of 150bp in length, 1.11 Tb of bases in total.
 all the 241 sorghum lines sequences using Illumina HiSeq X ten platform and used paired end sequencing. The average sequecning depth of all the sorghum accessions used were \~ 5-6.7 X. They called the SNPs using GATK (Genome Analysis ToolKit) after aligned with the reference genome of BTx623 (v3.1) with BWA -mem algorithm. They identified \~32 million SNPs and 4.2 million InDels from the 241 lines of sorghum.
 
 # selection scan method used in the publication
